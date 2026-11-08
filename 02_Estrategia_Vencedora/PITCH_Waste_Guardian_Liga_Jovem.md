@@ -15,10 +15,10 @@
 |------|-----------|
 | **Nome** | Waste Guardian |
 | **Tagline** | "Cada grama economizada. Cada família impactada. Cada planeta preservado." |
-| **Problema** | Supermercados perdem R$ 50K-500K/ano em waste management; famílias desperdiçam 30% do purchased |
+| **Problema** | Supermercados perdem R$ 50K-500K/ano em waste management *(estimativa setorial — não verificada)*; famílias desperdiçam 30% do purchased |
 | **Solução** | App mobile com IA para gerenciamento de alimentos próximos ao vencimento |
 | **Modelo** | B2B-first: Dashboard para Supermercados + Consumer via WhatsApp (não App Store) |
-| **ReceitaProj.** | R$ 20.000-50.000/mês (B2B) + R$ 9.900/mês (Consumer) |
+| **Receita Proj.** | R$ 148.500/mês (Ano 1, cenário base) = B2B R$ 130.000 + Consumer R$ 14.850 + Donation R$ 3.650 |
 | **ODS** | 11.6, 12.3, 13.3 |
 | **Fase Atual** | Entrega 01 (03/06) - Protótipo + Vídeo + Texto |
 
@@ -30,13 +30,18 @@
 
 > *"Todo dia, supermercados brasileiros descartam toneladas de alimentos. O custo de manejo de orgânicos: R$ 800-1.500 por tonelada. Enquanto isso, 2.7 milhões de pessoas são atendidas por food banks — mas poderiam fazer muito mais. O gap entre o que se perde e o que se poderia doar é enorme."*
 
+> **⚠️ Nota de roteiro (não dizer no vídeo):** o valor de R$ 800-1.500/tonelada é **estimativa setorial não verificada** e o número do Mesa Brasil (2.7M/mês) é **self-reported**. Se a orientadora pedir a fonte, responder "estimativa setorial, ainda a validar" e citar a **metodologia** do Sesc (`sesc.com.br/atuacoes/assistencia/sesc-mesa-brasil`) — **não** citar a ABRAS, marcada como fonte pouco fiável na análise (narrativa v4.0 §13).
+
 **Dados de Impacto (Alinhamento DLJ4):**
-| Métrica | Valor | Fonte |
-|---------|-------|-------|
-| Custo waste supermercado | R$ 800-1.500/tonelada | ABRAS (setor) |
-| Custo descarte aterro | R$ 150-300/tonelada | ABRAS (setor) |
-| Mesa Brasil Sesc | 2.7M pessoas/mês atendidas | Sesc.com.br (verificado) |
-| Food banks no Brasil | 30-50 ativos | Estimativa setorial |
+
+| Métrica | Valor | Status da fonte |
+|---------|-------|-----------------|
+| Custo waste supermercado | R$ 800-1.500/tonelada | Estimativa setorial — não verificada, a validar |
+| Custo descarte aterro | R$ 150-300/tonelada | Estimativa setorial — não verificada, a validar |
+| Mesa Brasil Sesc | 2.7M pessoas/mês atendidas | Self-reported (metodologia pública no site do Sesc, sem auditoria independente) — usar com caveat |
+| Food banks no Brasil | 30-50 ativos | Estimativa setorial — não verificada |
+
+> **Caveat de confiança (obrigatório em qualquer uso destes números):** os custos por tonelada **não foram verificados** por fonte primária (deep research adversarial — narrativa v4.0 §4.3 e §5.1) e o volume do Mesa Brasil é **self-reported** (narrativa v4.0 §6.1 e §7.2). **Não** apresentar nenhum destes números como dado auditado.
 
 ---
 
@@ -181,7 +186,7 @@ Duas linhas de produto complementares:
 │  QUADRANTE 1: B2B SUPERMARKETS (60-70%)                       │
 │  ├── Dashboard de waste management para supermercados              │
 │  ├── Pricing: R$ 1.500-3.000/mês/loja                           │
-│  ├── Pitch: "Reduza 25% do seu waste management cost"           │
+│  ├── Pitch: "R$ 1.500/mês se você economizar R$ 3K/mês"         │
 │  └── NÃO depende do usuário doméstico ✅                          │
 │                                                                     │
 │  QUADRANTE 2: B2B BRANDS (20-30%)                              │
@@ -203,15 +208,20 @@ Duas linhas de produto complementares:
 ```
 
 ### Projeção Financeira (Ano 1):
-| Fonte de Receita | Valor Mensal |
-|------------------|--------------|
-| B2B Supermarkets (5 redes × 10 lojas × R$ 2K) | R$ 20.000-50.000 |
-| B2B Brands (3 marcas × R$ 10K) | R$ 15.000-30.000 |
-| Consumer Premium (1.000 usuários × R$ 9,90) | R$ 9.900 |
-| Donation Fees | R$ 2.000-5.000 |
-| **TOTAL** | **R$ 46.900-94.900** |
+
+| Fonte de Receita | Fórmula (volume × preço unitário) | Valor Mensal | Mix (faixa canônica v4.0 §15.1) |
+|------------------|--------------------------------|--------------|-------------------------------|
+| B2B Supermarkets | 10 redes × 5 lojas × R$ 2.000/loja | R$ 100.000 | 67,3% (faixa 60-70%) ✅ |
+| B2B Brands | 3 marcas × R$ 10.000/marca | R$ 30.000 | 20,2% (faixa 20-30%) ✅ |
+| Consumer Premium | 1.500 usuários × R$ 9,90 | R$ 14.850 | 10,0% (faixa 10-15%) ✅ |
+| Donation Fees | 7.300 kg/mês × R$ 0,50/kg | R$ 3.650 | 2,5% (faixa 5%) — abaixo: o matching I2C ainda não tem volume validado |
+| **TOTAL** | **soma das 4 linhas acima** | **R$ 148.500** | **100%** |
+
+**Aritmética (verificável):** 10 × 5 × R$ 2.000 = R$ 100.000 · 3 × R$ 10.000 = R$ 30.000 · 1.500 × R$ 9,90 = R$ 14.850 · 7.300 × R$ 0,50 = R$ 3.650 · **TOTAL = R$ 100.000 + R$ 30.000 + R$ 14.850 + R$ 3.650 = R$ 148.500/mês (R$ 1.782.000 ARR)**.
 
 **Nota:** Modelo B2B NÃO depende do usuário doméstico escanear produtos. Dados vêm dos sistemas internos do supermercado.
+
+> **Nota — pitch de ROI verificável:** o Quadrante 1 usa o offer "**R$ 1.500/mês por loja se você economizar pelo menos R$ 3K/mês**" (narrativa v4.0 §15.2) — o cliente só paga se a economia superar 2× o preço. A formulação "reduza 25% do seu waste management cost" **não fecha** com os números atuais: com R$ 50K-500K/ano de custo (estimativa **não verificada**) e preço de R$ 18K-36K/ano por loja, o modelo só se paga acima de ~R$ 72K/ano de custo por loja. Por isso o pitch usa a formulação em R$ 3K/mês.
 
 ### Custo Operacional:
 | Item | Valor Mensal |

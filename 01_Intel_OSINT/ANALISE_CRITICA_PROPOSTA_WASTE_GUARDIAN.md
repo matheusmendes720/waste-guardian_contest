@@ -2,9 +2,12 @@
 ## Do Gap Industrial ao Modelo B2B2C: Evolução, Fraquezas e Novos Horizontes
 
 > **Status:** 🔴 ANÁLISE CRÍTICA EM ANDAMENTO  
+> **Last Updated:** 2026-06-12  
+> **Priority:** P1  
 > **Data:** 2026-06-09  
-> **Versão:** 1.0 — Consolidação de Inteligência OSINT  
+> **Versão:** 1.1 — Consolidação de Inteligência OSINT  
 > **Propósito:** Validar/refutar a proposta atual e explorar novos modelos de cadeia de valor  
+> **Precedência:** os **números e o modelo canónicos** do Waste Guardian estão em `ANALISE_NARRATIVA_WASTE_GUARDIAN.md` (v4.0, §15) e na projeção financeira do pitch. Este documento é **análise crítica de apoio** — em caso de divergência, a narrativa v4.0 prevalece.  
 
 ---
 
@@ -22,11 +25,11 @@ Este documento faz uma **auditoria crítica** da evolução do Waste Guardian �
 
 ## 📋 ÍNDICE ANALÍTICO
 
-1. [Proposta Original Low Hack — Análise Retrospectiva](#1-proposta-original-low-hack)
-2. [O Que Realmente Tínhamos — Inteligência OSINT Consolidada](#2-o-que-realmente-tínhamos)
+1. [Proposta Original Low Hack — Análise Retrospectiva](#1-proposta-original-low-hack--análise-retrospectiva)
+2. [O Que Realmente Tínhamos — Inteligência OSINT Consolidada](#2-o-que-realmente-tínhhamos--inteligência-osint-consolidada)
 3. [Análise Crítica do Modelo B2B2C Atual](#3-análise-crítica-do-modelo-b2b2c-atual)
 4. [Cadeias de Valor para Indústria e Distribuição](#4-cadeias-de-valor-para-indústria-e-distribuição)
-5. [Nova Proposta: Modelo Híbrido Direto (Fábrica→ONG→População)](#5-nova-proposta-modelo-híbrido-direto)
+5. [Nova Proposta: Modelo Híbrido Direto (Fábrica→ONG→População)](#5-nova-proposta-modelo-híbrido-direto-fábricaongpopulação)
 6. [Comparativo de Modelos e Viabilidade](#6-comparativo-de-modelos-e-viabilidade)
 7. [Plano de Ação para Validação](#7-plano-de-ação-para-validação)
 8. [Recomendações Finais](#8-recomendações-finais)
@@ -323,10 +326,25 @@ const MARKET_INTEL = {
 - Métricas ESG próprias
 - "Landing page" para consumidores (QR code no produto)
 
+
 **O que consumidor ganha:**
 - Desconto em produtos próximos do vencimento (automático)
 - App para receber alertas de ofertas
 - Gamificação: "Você salvou 5kg este mês"
+
+### 🔄 Fluxo de Dados — Do Supermercado ao Dashboard (Cadeia 1)
+
+```mermaid
+flowchart LR
+    A["Supermercado<br/>POS / ERP interno"] --> B["WG Collector<br/>validade, lote, descarte"]
+    B --> C["Base de dados<br/>waste por loja e categoria"]
+    C --> D["Dashboard de Waste Management<br/>perda, custo, tendência"]
+    D --> E["Relatório ESG<br/>compliance Lei 14.016"]
+    D --> F["Insight agregado<br/>para marcas (B2B Brands)"]
+    E -.-> G["ONG parceira<br/>matching I2C"]
+```
+
+**Leitura:** a cadeia de valor B2B **não depende do usuário doméstico** — o dado nasce nos sistemas internos do supermercado. É esta inversão que sustenta o pivô B2B-first.
 
 ### 4.3 Cadeia de Valor 2: MANUFACTURER QUALITY (Fabricantes)
 
@@ -392,7 +410,7 @@ const MARKET_INTEL = {
 │                                                                         │
 │  VALUE PROPOSITION:                                                    │
 │  "Waste Guardian para logística:                                       │
-│   온 MONITORAMENTO DE TEMPERATURA + RASTREAMENTO DE VALIDADE           │
+│   on MONITORAMENTO DE TEMPERATURA + RASTREAMENTO DE VALIDADE           │
 │   em tempo real — onde seu produto está, por quanto tempo,              │
 │   e quando vai expirar baseado na rota."                               │
 │                                                                         │
@@ -578,6 +596,27 @@ Você mencionou: *"minha ideia inicial era exatamente conectar a grande industri
 | **Fit DLJ4** | 🟡 Médio | 🟡 Médio | 🟡 Médio | 🟢 Alto |
 | **Viralidade** | 🔴 Baixa | 🟡 Média | 🟡 Média | 🟢 Alta |
 
+
+### 🔄 As 4 Cadeias de Valor Comparadas
+
+```mermaid
+flowchart TB
+    subgraph K1["Cadeia 1 — Retailer Intelligence"]
+        A1["Varejista"] --> A2["WG Dashboard"] --> A3["Reduz perda na loja"]
+    end
+    subgraph K2["Cadeia 2 — Manufacturer Quality"]
+        B1["Fabricante"] --> B2["WG Analytics de campo"] --> B3["P&D, routing, recall"]
+    end
+    subgraph K3["Cadeia 3 — Cold Chain"]
+        C1["Operador logístico"] --> C2["Temperatura + validade"] --> C3["Rota priorizada"]
+    end
+    subgraph K4["Cadeia 4 — I2C (Fábrica para ONG)"]
+        D1["Fábrica"] --> D2["WG classifica"] --> D3["ONG parceira"] --> D4["População carente"]
+    end
+```
+
+**Leitura:** as cadeias 1 e 2 são **B2B puro** (sem consumidor no loop) e têm o menor atrito de adoção. A cadeia 4 é a de **maior impacto social**, mas exige logística e volume de ONGs que ainda não validamos.
+
 ### 6.2 Recomendação por Contexto
 
 | Contexto | Modelo Recomendado | Justificativa |
@@ -646,6 +685,19 @@ Você mencionou: *"minha ideia inicial era exatamente conectar a grande industri
 | **3. Pesquisa Fabricantes** | "Vocês têm dificuldade de doar excedentes?" | Business | 3 dias | ⏳ |
 | **4. Caso piloto** | Selecionar 1 fábrica + 1 ONG para teste | Team | 1 semana | ⏳ |
 | **5. Validação legal** | Consultar advogado sobre Lei 12.713 | Legal | 1 semana | ⏳ |
+
+
+### 🔄 Fluxo de Validação B2B — 48h para a primeira resposta
+
+```mermaid
+flowchart LR
+    V1["Fase 1<br/>Mapa de ONGs<br/>10-20 em SP"] --> V2["Fase 2<br/>Entrevistas<br/>com ONGs"]
+    V2 --> V3["Fase 3<br/>Entrevistas<br/>com fabricantes"]
+    V3 --> V4["Fase 4<br/>Piloto<br/>1 fábrica + 1 ONG"]
+    V4 --> V5["Fase 5<br/>Validação legal<br/>Lei 12.713"]
+```
+
+**Leitura:** o plano é sequencial e barato — cada fase tem um entregável verificável antes da siguiente. Nenhuma fase depende de volume de dados que ainda não temos.
 
 ### 7.2 ONGs de Referência (Para Investigação)
 

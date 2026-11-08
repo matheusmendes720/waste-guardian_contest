@@ -1,5 +1,9 @@
 # 🧠 INTELLIGENCE LAYER — Low Hack 2026
 
+
+> **Status:** 🟢 Ativo  
+> **Last Updated:** 2026-06-12  
+> **Priority:** P1  
 > **War Room Central de Inteligência Competitiva**  
 > *"Conhecimento é a única vantagem competitiva sustentável em 48h de hackathon.*"
 
@@ -26,7 +30,11 @@ Seguindo os workflows universais (`Workflow_00_Capital_Flow_First`, `Workflow_01
 | **01** | [📜 Edital Deep Analysis](01_Edital_Deep_Analysis.md) | Decomposição completa do regulamento com brechas, tie-breakers e estratégia de scoring | **Antes de escrever qualquer código** |
 | **02** | [📊 Aggressive BI Intelligence](02_Aggressive_BI_Intelligence.md) | Capital flow analysis, TAM/SAM/SOM, sponsor profiling, estatísticas devastadoras | Fase de preparação + pitch |
 | **03** | [🧬 Knowledge Synthesis OSINT](03_Knowledge_Synthesis_OSINT.md) | Macro-Meso-Micro architecture, psicologia C-Level, frameworks de decisão | Todo o ciclo de competição |
+
 | **04** | [⚡ Real Execution Roadmap](04_Real_Execution_Roadmap.md) | Roadmap operacional com gatilhos, decision trees, checkpoints de inteligência | Durante a execução (18-19/04) |
+| **05** | [📊 Análise Narrativa — Waste Guardian v4.0](ANALISE_NARRATIVA_WASTE_GUARDIAN.md) | **Quadro canónico** — deep research adversarial, 4 quadrantes de receita, caveats de confiança. Rascunho: requer validação primária | Antes de usar qualquer número no pitch |
+| **06** | [🔧 Análise Técnica Completa — Waste Guardian v2.1](ANALISE_TECNICA_COMPLETA_WASTE_GUARDIAN.md) | Base de dados: 615 métricas, 112 fontes, 8 batches. Subordinada à narrativa v4.0 | Consulta de dado bruto |
+| **07** | [📊 Análise Crítica Expansiva — Waste Guardian v1.1](ANALISE_CRITICA_PROPOSTA_WASTE_GUARDIAN.md) | Auditoria do modelo B2B2C, cadeias de valor alternativas e plano de validação | Escolha de modelo e priorização |
 
 ---
 
@@ -141,9 +149,11 @@ Em caso de dúvida estratégica durante a competição:
 
 ## 📝 Changelog
 
+
 | Data | Versão | Mudanças |
 |------|--------|----------|
 | 2026-04-02 | v1.0 | Criação da Intelligence Layer com 4 documentos base |
+| 2026-06-12 | v1.1 | Adicionadas as 3 análises do Waste Guardian (narrativa v4.0, técnica v2.1, crítica v1.1); narrativa declarada quadro canónico |
 
 ---
 
@@ -153,4 +163,5 @@ Em caso de dúvida estratégica durante a competição:
 
 ---
 
-*Última atualização: 02/04/2026*
+
+*Última atualização: 12/06/2026*

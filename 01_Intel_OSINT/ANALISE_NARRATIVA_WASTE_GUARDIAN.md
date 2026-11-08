@@ -1,9 +1,13 @@
 # Análise Narrativa — Waste Guardian
 ## Da Visão ao Modelo Operacional: Caminhos, gaps e perguntas em aberto
 
-**Data:** 2026-06-12
-**Versão:** 4.0 (após deep research adversarial — metodologia rigorosa)
-**Status:** Rascunho — requer validação primária adicional
+
+> **Status:** Rascunho — requer validação primária adicional  
+> **Last Updated:** 2026-06-12  
+> **Priority:** P1  
+> **Data:** 2026-06-12  
+> **Versão:** 4.0 (após deep research adversarial — metodologia rigorosa)  
+> **Precedência:** este documento é o **quadro canónico** de números e modelo do Waste Guardian (§15.1, §15.2 e §15.6). Em caso de divergência com `ANALISE_TECNICA_COMPLETA_WASTE_GUARDIAN.md` ou com o quadro de receita do pitch, **a narrativa v4.0 prevalece**.  
 
 ---
 
@@ -76,6 +80,28 @@ Supermercados pagam R$ 3-15K/mês para ter dados sobre desperdício dos clientes
 **Impacto:** Precisamos dados concretos de incentive, não suposições
 
 ---
+
+
+### 🔻 Os Três Pressupostos que Caíram
+
+| # | Pressuposto original | O que acontece na prática | Impacto |
+|---|----------------------|----------------------------|---------|
+| **1** | Consumer scan = dados B2B | Consumidores não escaneiam por conta própria (comportamento não-validado) | Modelo B2B baseado em dados de consumer é fraco |
+| **2** | Nota fiscal me dá dados de validade | A nota traz descrição, quantidade, valor, CNPJ e data — **não** traz validade nem lote | Integração útil para gestão financeira, não para tracking de validade |
+| **3** | B2B vai pagar por dados de waste | O incentivo existe (redução de custo + dedução IR), mas o valor em R$ não foi validado | Precisamos dados concretos de incentivo, não suposições |
+
+```mermaid
+flowchart TB
+    P1["Pressuposto 1<br/>Consumer scan = dados B2B"] --> R1["CAI<br/>consumidor não escaneia"]
+    P2["Pressuposto 2<br/>Nota fiscal traz validade"] --> R2["CAI<br/>nota não traz validade nem lote"]
+    P3["Pressuposto 3<br/>B2B paga por dados de waste"] --> R3["PARCIAL<br/>incentivo existe,<br/>valor em R$ não validado"]
+    R1 --> C["Consequência<br/>sem dado de consumer, sem B2B"]
+    R2 --> C
+    R3 --> C
+    C --> N["Nova tese<br/>B2B-first:<br/>o dado vem do supermercado"]
+```
+
+**Leitura:** os três pressupostos caem pela mesma razão — nunca conversamos com quem paga. A nova tese não é uma otimização do modelo antigo: **troca a fonte do dado** (do consumidor para o supermercado) e inverte a dependência.
 
 ## 3. ANÁLISE MULTI-FRAMEWORK — O que os frameworks dizem sobre viabilidade
 
@@ -450,7 +476,8 @@ NÃO USAR (claims refutados ou unverificáveis):
    - Se 10 pagam, levantar seed (R$ 500K-1M)
    - Se ninguém paga, pivotar para consumer premium only
 
-8. **I2C como fase 2 (se B2B站稳):**
+
+8. **I2C como fase 2 (se B2B se consolidar):**
    - Só fazer se B2B gerar R$ 50K/mês+
    - Piloto com 5 supermercados + 10 ONGs
    - Medir: volume redirecionado, custo/kg, satisfação
@@ -593,6 +620,19 @@ primária vão ser questionados e desacreditados.
 
 ---
 
+
+### 🔁 Fluxo de Validação — Da Pergunta ao Contrato
+
+```mermaid
+flowchart LR
+    S1["Semanas 1-2<br/>2-3 supermercados<br/>'quanto você gasta<br/>com descarte?'"] --> S2["Semanas 3-4<br/>Banco de Alimentos<br/>volume e custo"]
+    S2 --> S3["Semanas 5-8<br/>MVP consumer<br/>D7 retention > 40%"]
+    S3 --> S4["Mês 3+<br/>1º contrato B2B<br/>ou pivot"]
+    S1 --> S3
+```
+
+**Leitura:** cada etapa responde a **uma** pergunta com dado primário. Nenhum passo avança sem a resposta do anterior — e a recusa de um supermercado é um sinal de pivot, não de fracasso.
+
 ## 13. FONTES E REFERÊNCIAS — DEEP RESEARCH ADVERSARIAL
 
 ```
@@ -669,6 +709,22 @@ PERGUNTAS QUE O DEEP RESEARCH NÃO CONSEGUIU RESPONDER:
 | B2B Brands | 20-30% | ZERO | Eventos + LinkedIn |
 | Consumer Premium | 10-15% | PARCIAL | WhatsApp |
 | Donation/I2C | 5% | PARCIAL | Food banks |
+
+
+### 🔀 Mapa dos 4 Quadrantes de Revenue (canônico)
+
+```mermaid
+flowchart TB
+    subgraph CANON["4 Quadrantes de Revenue — quadro canônico v4.0 §15.1"]
+        Q1["Q1 · B2B Supermarkets<br/>60-70% · dependência ZERO"]
+        Q2["Q2 · B2B Brands<br/>20-30% · dependência ZERO"]
+        Q3["Q3 · Consumer Premium<br/>10-15% · dependência PARCIAL"]
+        Q4["Q4 · Donation / I2C<br/>5% · dependência PARCIAL"]
+    end
+    Q1 -->|"insights agregados<br/>(dados do supermercado)"| Q2
+```
+
+**Leitura:** 60-70% da receita **não depende do usuário doméstico**. Q3 e Q4 são complements, não pilares — se o B2B não se consolidar, o modelo perde o chão.
 
 ### 15.2 Detalhamento por Quadrante
 

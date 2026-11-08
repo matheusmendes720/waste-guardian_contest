@@ -1,7 +1,10 @@
 # 📋 INDEX — WASTE GUARDIAN / DLJ4
 
-> **Data:** 2026-06-03 14:30  
-> **Versão:** 3.0  
+
+> **Data:** 2026-06-12  
+> **Last Updated:** 2026-06-12  
+> **Priority:** P0  
+> **Versão:** 3.1  
 > **Foco:** ENTREGA 01 — HOJE  
 
 ---
@@ -39,15 +42,32 @@ local/liga_jovem/
 ├── 📄 PROGRESSO_ENTREGA_01.md    ← Status tracking
 ├── 📄 MASTER_ROADMAP_DLJ4.md     ← Roadmap completo
 │
+
 ├── 00_Regulamento/               (edital)
 ├── 01_Intel_OSINT/               (pesquisa)
+│   ├── ANALISE_NARRATIVA_WASTE_GUARDIAN.md        ← quadro canónico (v4.0)
+│   ├── ANALISE_TECNICA_COMPLETA_WASTE_GUARDIAN.md
+│   └── ANALISE_CRITICA_PROPOSTA_WASTE_GUARDIAN.md
 ├── 02_Estrategia_Vencedora/      (pitch)
 ├── 03_Arquitetura_Projeto/
 │   ├── spa-workspace/            ← SPA (80% feito)
 │   └── docs/
 ├── 04_BI_Ofensivo/               (texto, financeiro)
+
 └── 05_Market_Intelligence/      (mercado)
 ```
+
+---
+
+## 📚 ANÁLISES OSINT DO WASTE GUARDIAN (12/06/2026)
+
+| Documento | Localização | Papel |
+|-----------|-------------|-------|
+| **Análise Narrativa v4.0** | `01_Intel_OSINT/ANALISE_NARRATIVA_WASTE_GUARDIAN.md` | **Quadro canónico** — números, 4 quadrantes de receita e caveats de confiança. Rascunho: requer validação primária adicional (§14 OPEN QUESTIONS) |
+| **Análise Técnica v2.1** | `01_Intel_OSINT/ANALISE_TECNICA_COMPLETA_WASTE_GUARDIAN.md` | Base de dados — 615 métricas, 112 fontes, 8 batches |
+| **Análise Crítica v1.1** | `01_Intel_OSINT/ANALISE_CRITICA_PROPOSTA_WASTE_GUARDIAN.md` | Auditoria do modelo B2B2C e cadeias de valor alternativas |
+
+> Em caso de divergência entre documentos, **a Análise Narrativa v4.0 prevalece** (§15.1 e §15.6). O quadro de receita do pitch segue a mesma base.
 
 ---
 
@@ -141,5 +161,6 @@ UPLOAD PORTAL:
 
 ---
 
+
 > **Mantra:** *"Fast > perfeito. Entregue → refine."*  
-> **Última atualização:** 2026-06-03 14:30
+> **Última atualização:** 2026-06-12

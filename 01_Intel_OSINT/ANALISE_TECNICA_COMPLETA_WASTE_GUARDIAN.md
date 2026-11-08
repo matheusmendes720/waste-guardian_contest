@@ -1,11 +1,16 @@
 # ANÁLISE TÉCNICA COMPLETA — Waste Guardian
 ## Consolidação de Inteligência: 615 Métricas, 112 Fontes, 8 Batches
 
-> **Status:** 🔴 ANÁLISE FINAL
-> **Data:** 2026-06-12
-> **Versão:** 2.0 — Consolidação Completa
-> **Projeto:** Waste Guardian — Liga Jovem DLJ4
-> **Propósito:** Documentar todas as descobertas, gaps e recomendações para refatoração da proposta de valor
+
+> **Status:** 🔴 ANÁLISE FINAL (base de dados — ver precedência abaixo)  
+> **Last Updated:** 2026-06-12  
+> **Priority:** P1  
+> **Data:** 2026-06-12  
+> **Versão:** 2.1 — Consolidação Completa  
+> **Projeto:** Waste Guardian — Liga Jovem DLJ4  
+> **Propósito:** Documentar todas as descobertas, gaps e recomendações para refatoração da proposta de valor  
+
+> **⚖️ PRECEDÊNCIA (v2.1):** os **números e o modelo canónicos** do Waste Guardian estão na **Análise Narrativa v4.0** (`ANALISE_NARRATIVA_WASTE_GUARDIAN.md` §15.1, §15.2 e §15.6) e na **projeção financeira do pitch** (`02_Estrategia_Vencedora/PITCH_Waste_Guardian_Liga_Jovem.md`). Este documento é a **base de dados** (615 métricas, 112 fontes, 8 batches) — **não é o quadro canónico**. Onde este documento e a narrativa divergirem, **a narrativa v4.0 prevalece**. As §8.2 (mix de receita) e §8.3 (roadmap) foram alinhadas ao quadro canónico; as §5.3 mantém-se como decomposição operacional dos mesmos 6 modelos.
 
 ---
 
@@ -67,7 +72,8 @@ Brasil ~50% do LatAm = R$ 11,5 bi (market research direto)
 Ajustado para subset desperdício: R$ 18,4-32 bi
 ```
 
-#### SAM Brasil (细分 mercado endereçável)
+
+#### SAM Brasil (segmento endereçável)
 ```
 SAM B2C household:     R$ 400M  (21,7M famílias × 8% willing to pay × R$ 107/ano)
 SAM B2B dashboard:      R$ 500M  (3.750 grandes establishments × R$ 24K/ano)
@@ -98,7 +104,8 @@ Otimista:     R$ 20M (250K users + 300 B2B)
 |---------|--------|--------|---------|
 | Desperdício per capita | 94 kg/pessoa/ano | 132 kg/pessoa/ano | Brasil está 29% MELHOR que média global |
 | Perda econômica | R$ 61,3 bi/ano | — | 3% do PIB |
-| тенденция | Estável (sem dados) | Estável | Mundo não está reduzindo |
+
+| Tendência | Estável (sem dados) | Estável | Mundo não está reduzindo |
 | Regulação | Lei 14.016 + COP30 | — | Brasil avançando |
 
 ---
@@ -233,6 +240,21 @@ dício    baixo focus domestico)         baixo focus domestico)
 Comerc.
 ```
 
+
+### 🔲 Onde o Waste Guardian Se Posiciona
+
+```mermaid
+flowchart TB
+    AXIS["Eixo X: foco (baixo → alto)<br/>Eixo Y: sofisticação tecnológica (baixa → alta)"]
+    AXIS --- H1["Alto foco / Alta tech<br/>★ WASTE GUARDIAN<br/>household + AI + gamificação + PT-BR"]
+    AXIS --- H2["Alto foco / Média tech<br/>Comida Invisível (B2B SaaS)"]
+    AXIS --- H3["Baixo foco / Alta tech<br/>Too Good To Go"]
+    AXIS --- H4["Baixo foco / Média tech<br/>Food To Save"]
+    AXIS --- H5["Alto foco / Baixa tech<br/>OLIO"]
+```
+
+**Leitura:** o quadrante vazio é **household + AI + PT-BR**. É uma janela de 12-18 meses antes que um player global entre com IA — não uma barreira técnica permanente.
+
 ### 4.3 Diferencial Único do Waste Guardian
 
 **Waste Guardian é o ÚNICO app no mundo que combina:**
@@ -269,7 +291,26 @@ Comerc.
 
 **Não é "empresa patrocina para famílias usarem". É "empresa paga por dados e inteligência."**
 
+
 ### 5.2 6 Modelos B2B Explicados Detalhadamente
+
+### 🔀 Arquitetura de Dados e Receita — Qual modelo se apoia em quê
+
+```mermaid
+flowchart LR
+    subgraph ENTRADA["Fontes de dado"]
+        S1["POS / ERP do supermercado"]
+        S2["Escaneamento do consumidor<br/>(parcial, não-B2B)"]
+    end
+    S1 --> W["Waste Guardian<br/>coleta, agrega, classifica"]
+    S2 -.->|"sinal fraco<br/>não sustenta o B2B"| W
+    W --> O1["Dashboard de waste<br/>(B2B Supermarkets)"]
+    W --> O2["Insight as a Service<br/>(B2B Brands)"]
+    W --> O3["Consumer Premium<br/>(WhatsApp)"]
+    W --> O4["Matching de doação<br/>(I2C)"]
+```
+
+**Leitura:** apenas o ramo do supermercado alimenta os dois quadrantes que carregam 80%+ da receita. O ramo do consumidor é dependência **parcial** — nunca foi a base do B2B.
 
 #### Modelo 1: DATA AS A SERVICE (Supermercados)
 ```
@@ -392,7 +433,10 @@ Danone Brasil (exemplo):
 | Compliance as a Service (Bancos) | 20% | R$ 1M | 40 |
 | API as a Service (Plataformas) | 15% | R$ 750K | 5 |
 | Referral Fee (Doação) | 10% | R$ 500K | — |
+
 | **TOTAL** | **100%** | **R$ 5M** | **120** |
+
+> **Reconciliação com o quadro canônico (v4.0 §15.1):** os 6 modelos acima são a **decomposição operacional** do mesmo revenue pool; o **split canónico é o de 4 quadrantes** (B2B Supermarkets / B2B Brands / Consumer Premium / Donation-I2C) definido na narrativa v4.0 e materializado na projeção do pitch. "Compliance as a Service" e "API as a Service" são extensões dentro de B2B, não quadrantes separados, e o Consumer Premium (B2C) entra no quadro canónico à parte (faixa 10-15%).
 
 ### 5.4 Por Que B2B é Mais Estável que B2C
 
@@ -452,7 +496,8 @@ Brasil sediará COP30 em 2025 (Belém/PA)
 └── Oportunidade: Empresas precisam mostrar ação para cumprir metas
 
 MOMENTO BRASILEIRO:
-├── Lei 14.016 existe desde 2020 (faltava执行力)
+
+├── Lei 14.016 existe desde 2020 (faltava execução)
 ├── II Estratégia PDA (2025): Meta formalizada
 ├── COP30: Visibilidade global para quem age primeiro
 └── Janela: Empresas que começarem agora serão as "pioneiras" no Brasil
@@ -464,12 +509,13 @@ MOMENTO BRASILEIRO:
 
 ### 7.1 Gap 1: Mapa de ONGs de Redistribuição 🔴 ALTA
 
+
 **O que sabemos:**
 - Comida Invisível: 20K ONGs, 2K ativas, 13M refeições redistribuídas
-- Mesa Brasil Sesc: ~15.000 toneladas/mês (rede nacional)
 - Banco de Alimentos SP: ~50 toneladas/mês
 
 **O que não sabemos:**
+- Volume real processado pelo **Mesa Brasil Sesc**: a estimativa de 15.000-20.000 **toneladas/ano** (não toneladas/mês) **não foi verificada** por fonte primária — ver narrativa v4.0 §6.1
 - Qual o volume real que ONGs precisam?
 - Qual o custo logístico por kg coletado?
 - Quais alimentos as ONGs NÃO estão conseguindo?
@@ -554,31 +600,41 @@ Se 1.000 famílias usassem o app por 1 mês:
 - Gatilho monetário > gatilho ideológico (Batch 04)
 - WTP funciona quando há ROI direto (Benchmark)
 
-### 8.2 Mix de Receita Recomendado
 
-| Prioridade | Fonte | % | Ano 3 |
-|------------|-------|---|-------|
-| 🥇 1 | Data/Insight as a Service (B2B) | 55% | R$ 2,75M |
-| 🥈 2 | Compliance as a Service (B2B) | 25% | R$ 1,25M |
-| 🥉 3 | B2C Premium (R$ 9,90/mês) | 15% | R$ 750K |
-| 4 | Referral Fee (Marketplace) | 5% | R$ 250K |
+### 8.2 Mix de Receita Recomendado (quadro canônico v4.0 §15.1)
 
-### 8.3 Roadmap de 3 Anos
+| Prioridade | Fonte (quadrante canônico) | % Ano 1 | ARR Ano 1 | % Ano 3 | ARR Ano 3 |
+|------------|---------------------------|----------|-----------|----------|-----------|
+| 🥇 1 | B2B Supermarkets — Data as a Service | 67,3% | R$ 1,20M | 60-70% | R$ 3,0-3,5M |
+| 🥈 2 | B2B Brands — Insight as a Service | 20,2% | R$ 360K | 20-30% | R$ 1,0-1,5M |
+| 🥉 3 | Consumer Premium (R$ 9,90/mês) | 10,0% | R$ 178K | 10-15% | R$ 500-750K |
+| 4 | Donation/I2C — Referral Fee | 2,5% | R$ 44K | ~5% | R$ 250K |
+| | **TOTAL** | **100%** | **R$ 1,782M** | **100%** | **R$ 5M** |
+
+> **Reconciliação com o quadro canônico:** a taxonomia de 4 quadrantes substitui a de 4 linhas de receita da v2.0 (55/25/15/5). O **split canónico é o da narrativa v4.0** (B2B Supermarkets / B2B Brands / Consumer Premium / Donation-I2C). O Ano 1 vem da projeção do pitch: **R$ 148.500/mês = R$ 1.782.000 ARR** (os valores por quadrante na tabela estão arredondados; a soma exata é R$ 1.782.000).
+
+
+### 8.3 Roadmap de 3 Anos (alinhado ao quadro canônico v4.0)
+
+```mermaid
+flowchart LR
+    A1["Ano 1<br/>MVP + validação B2B<br/>R$ 1,782M ARR"] --> A2["Ano 2<br/>Validação e escala<br/>R$ 3M ARR"] --> A3["Ano 3<br/>Escala LATAM + I2C<br/>R$ 5M ARR"]
+```
 
 ```
-ANO 1 (Fase MVP):
-├── MVP: Scanner + receitas + alertas
-├── Piloto: 50-100 famílias em SP
-├── 1-2 parceiros B2B (supermercado)
-├── Validação: Product-Market Fit
-└── Receita: R$ 250K ARR
+ANO 1 (Fase MVP + Validação B2B):
+├── MVP: Dashboard de waste + alertas de validade (B2B)
+├── Piloto: 1-2 redes de supermercado (5-10 lojas) + 50 famílias
+├── Base do cenário: 10 redes × 5 lojas × R$ 2.000/loja
+├── Validação: 2-3 entrevistas com gestores + 1º contrato B2B
+└── Receita: R$ 1,782M ARR (R$ 148,5K/mês — canônico v4.0 / pitch)
 
 ANO 2 (Fase Validação):
 ├── Expansão: 5.000-10.000 famílias
 ├── 10-20 parceiros B2B
 ├── Integração: Comida Invisível (20K ONGs)
 ├── Lançamento: API para plataformas
-└── Receita: R$ 1,5M ARR
+└── Receita: R$ 3M ARR
 
 ANO 3 (Fase Escala):
 ├── 50.000+ famílias
@@ -587,6 +643,8 @@ ANO 3 (Fase Escala):
 ├── Expansão: LATAM (português/espanhol)
 └── Receita: R$ 5M ARR
 ```
+
+> **Nota:** o Ano 1 foi corrigido de R$ 250K ARR para **R$ 1,782M ARR**. O valor anterior vinha da taxonomia de receita da v2.0 (55/25/15/5) e não fechava com a projeção do pitch. O Ano 1 canónico é o da narrativa v4.0: **R$ 148.500/mês**.
 
 ---
 
