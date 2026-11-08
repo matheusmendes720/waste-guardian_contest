@@ -5,7 +5,7 @@
 > **Versão:** 2.0 (Fase 1 - Entrega Junho)  
 > **ODS:** 11 (Cidades Sustentáveis), 12 (Consumo Responsável), 13 (Ação Climática)  
 > **Formato:** Vídeo 5 minutos | Texto 800-1500 palavras | Protótipo Figma  
-> **Modelo:** B2B2C (Patrocínio ESG)
+> **Modelo:** B2B-first (Dashboard para Supermercados) + Consumer App (WhatsApp)
 
 ---
 
@@ -15,10 +15,10 @@
 |------|-----------|
 | **Nome** | Waste Guardian |
 | **Tagline** | "Cada grama economizada. Cada família impactada. Cada planeta preservado." |
-| **Problema** | Desperdício alimentar doméstico (30% do purchased, R$ 180-350/família/mês) |
+| **Problema** | Supermercados perdem R$ 50K-500K/ano em waste management; famílias desperdiçam 30% do purchased |
 | **Solução** | App mobile com IA para gerenciamento de alimentos próximos ao vencimento |
-| **Modelo** | B2B2C: Empresas pagan assinatura; famílias usam de graça |
-| **ReceitaProj.** | R$ 8.500-18.500/mês |
+| **Modelo** | B2B-first: Dashboard para Supermercados + Consumer via WhatsApp (não App Store) |
+| **ReceitaProj.** | R$ 20.000-50.000/mês (B2B) + R$ 9.900/mês (Consumer) |
 | **ODS** | 11.6, 12.3, 13.3 |
 | **Fase Atual** | Entrega 01 (03/06) - Protótipo + Vídeo + Texto |
 
@@ -28,15 +28,15 @@
 
 ### MINUTO 0:00 - 0:30 | 🪝 GANCHO (O Hook)
 
-> *"A cada dia, o Brasil descarta 1.500 toneladas de alimentos antes mesmo de chegarem às prateleiras. O equivalente a 375 caminhões de lixo. Por dia. R$ 61,3 bilhões perdidos por ano."*
+> *"Todo dia, supermercados brasileiros descartam toneladas de alimentos. O custo de manejo de orgânicos: R$ 800-1.500 por tonelada. Enquanto isso, 2.7 milhões de pessoas são atendidas por food banks — mas poderiam fazer muito mais. O gap entre o que se perde e o que se poderia doar é enorme."*
 
 **Dados de Impacto (Alinhamento DLJ4):**
 | Métrica | Valor | Fonte |
 |---------|-------|-------|
-| Desperdício doméstico | 30% do purchased | UNEP Food Waste Index 2024 |
-| Custo/família | R$ 180-350/mês | IBGE 2024 |
-| Emissões CO₂ | 10kg CO₂/família/mês | EPA Carbon Calculator |
-| Ranking global | 10º maior desperdiçador | UNEP Global Index |
+| Custo waste supermercado | R$ 800-1.500/tonelada | ABRAS (setor) |
+| Custo descarte aterro | R$ 150-300/tonelada | ABRAS (setor) |
+| Mesa Brasil Sesc | 2.7M pessoas/mês atendidas | Sesc.com.br (verificado) |
+| Food banks no Brasil | 30-50 ativos | Estimativa setorial |
 
 ---
 
@@ -60,15 +60,27 @@
 
 ### MINUTO 1:30 - 2:30 | 💡 A SOLUÇÃO (Our Solution)
 
-## 🌿 WASTE GUARDIAN — Seu Copiloto de Sustentabilidade Doméstica
+## 🌿 WASTE GUARDIAN — Duas Soluções, Um Objetivo
 
 ### O que é?
-Um **aplicativo de gestão inteligente de desperdício alimentar** que:
-1. **Escaneia** alimentos próximos ao vencimento (câmera do celular + IA)
-2. **Sugere receitas** baseadas nos ingredientes prestes a vencer
-3. **Calcula impacto ambiental** em tempo real (kg CO₂ evitados)
-4. **Gamifica** a redução de desperdício (desafios, ranking, medalhas)
-5. **Conecta cooperativas** para doação de alimentos ainda frescos
+Duas linhas de produto complementares:
+
+**B2B: Dashboard de Waste Management para Supermercados**
+- Visualização de waste por categoria, loja e período
+- Alertas de validade e sugestões de doação
+- Relatórios ESG para compliance (Lei 14.016)
+- Pricing: R$ 1.500-3.000/mês/loja
+
+**B2C: App via WhatsApp para Famílias**
+- Notificações proativas: "Seu tomate vence em 2 dias"
+- Sugestões de receita baseadas no que você tem
+- Gamificação: streaks, badges, ranking
+- Doação: conecta a ONGs próximas via Banco de Alimentos
+
+### Por que WhatsApp?
+- Brasileiro não baixa app de "gestão de geladeira"
+- Mas responde no WhatsApp se a mensagem for útil
+- Custo de aquisição: quase zero
 
 ### Stack Tecnológica (Protótipo Fase 1):
 ```
@@ -159,33 +171,33 @@ Um **aplicativo de gestão inteligente de desperdício alimentar** que:
 
 ### MINUTO 3:30 - 4:15 | 💰 MODELO DE NEGÓCIOS (Sustainability)
 
-### Modelo B2B2C (Patrocínio ESG) — Critério 20% da Nota
+### Modelo B2B-first (4 Quadrantes) — Critério 20% da Nota
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         ESTRUTURA DE RECEITA                        │
+│                    4 QUADRANTES DE RECEITA                          │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│  B2B: EMPRESAS (Patrocinadores)                                    │
-│  ├── Supermercados (Pão de Açúcar, Extra, Carrefour)              │
-│  ├── Indústria alimentícia (Nestlé, Danone, JBS)                   │
-│  ├── Redes de restaurante (Outback, Madero, McDonald's)          │
-│  └── Fabricantes de eletrodomésticos (Samsung, LG)                │
-│       ↓ Pagam assinatura anual                                     │
-│       ↓ Exibem marca como patrocinador ESG                         │
+│  QUADRANTE 1: B2B SUPERMARKETS (60-70%)                       │
+│  ├── Dashboard de waste management para supermercados              │
+│  ├── Pricing: R$ 1.500-3.000/mês/loja                           │
+│  ├── Pitch: "Reduza 25% do seu waste management cost"           │
+│  └── NÃO depende do usuário doméstico ✅                          │
 │                                                                     │
-│  WASTE GUARDIAN (Plataforma)                                      │
-│  ├── App gratuito para usuário final                               │
-│  ├── Dashboard B2B com métricas de impacto                        │
-│  ├── Dados anonimizados de consumo (preço por kg evitado)         │
-│  └── Ofertas personalizadas de parceiros (sem spam)                │
-│       ↓ Engaja usuários                                            │
-│       ↓ Gera dados de impacto                                      │
+│  QUADRANTE 2: B2B BRANDS (20-30%)                              │
+│  ├── Insight as a Service para marcas (Nestlé, Unilever, etc.)  │
+│  ├── Pricing: R$ 5.000-15.000/mês por brand                    │
+│  └── Pitch: "Seus produtos estão sendo desperdiçados por X%"     │
 │                                                                     │
-│  B2C: FAMÍLIAS (Consumidores)                                     │
-│  ├── App gratuito com gamificação                                  │
-│  ├── Notificações de validade                                     │
-│  └── Impacto ambiental mensurado                                  │
+│  QUADRANTE 3: CONSUMER PREMIUM (10-15%)                        │
+│  ├── App via WhatsApp (não App Store)                           │
+│  ├── Freemium + Premium R$ 9,90/mês                              │
+│  └── Depende parcialmente do usuário doméstico ⚠️                  │
+│                                                                     │
+│  QUADRANTE 4: DONATION/I2C (5%)                                 │
+│  ├── Plataforma de matching (supermercado ↔ ONG)                 │
+│  ├── Fee: R$ 0,20-0,50/kg redirecionado                         │
+│  └── Parceria com Banco de Alimentos SP                          │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```
@@ -193,10 +205,13 @@ Um **aplicativo de gestão inteligente de desperdício alimentar** que:
 ### Projeção Financeira (Ano 1):
 | Fonte de Receita | Valor Mensal |
 |------------------|--------------|
-| Assinatura Patrocinadores B2B | R$ 5.000-15.000 |
-| Freemium → Premium (10%) | R$ 2.000 |
-| Dados anonimizados (B2B) | R$ 1.500 |
-| **TOTAL** | **R$ 8.500-18.500** |
+| B2B Supermarkets (5 redes × 10 lojas × R$ 2K) | R$ 20.000-50.000 |
+| B2B Brands (3 marcas × R$ 10K) | R$ 15.000-30.000 |
+| Consumer Premium (1.000 usuários × R$ 9,90) | R$ 9.900 |
+| Donation Fees | R$ 2.000-5.000 |
+| **TOTAL** | **R$ 46.900-94.900** |
+
+**Nota:** Modelo B2B NÃO depende do usuário doméstico escanear produtos. Dados vêm dos sistemas internos do supermercado.
 
 ### Custo Operacional:
 | Item | Valor Mensal |

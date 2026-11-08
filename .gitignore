@@ -34,3 +34,5 @@ npm-debug.log*
 *.bak
 -p/
 pi-session-*.html
+# Local Pi runtime state
+.atl/
