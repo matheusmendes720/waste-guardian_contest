@@ -34,3 +34,8 @@ npm-debug.log*
 *.bak
 -p/
 pi-session-*.html
+
+# Local Pi runtime state
+.atl/
+# Local machine settings (Claude Code) — never version per-machine permissions
+.claude/settings.local.json
